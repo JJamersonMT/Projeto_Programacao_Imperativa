@@ -163,5 +163,8 @@ footer a:hover {
     <script>
         import { estado } from "../estado";
         import { trocarEstado } from "../estado";
+        if(location.search.slice(1).split('=').toString().replace('again,','')==='true'){
+            trocarEstado("jogo")
+        }
      </script>
         

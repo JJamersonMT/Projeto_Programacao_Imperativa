@@ -79,7 +79,7 @@
       <h1>FIM DE JOGO!</h1>
     <div class="try-again">
       <p>Tente novamente!</p>
-      <a href="/"><i class="fa fa-refresh fa-spin" ></i></a>
+      <a href="/?again=true"><i class="fa fa-refresh fa-spin" ></i></a>
     </div>
     </main>
     <footer>

@@ -106,19 +106,27 @@
             ponto.style.left = vy;
         }
     }
-    function colisao() {
+    function timer(){
+        let time = 150
+        setTimeout(time=>{},time)
+    }
+    async function colisao() {
         for (let i = 1; i < cobra.length; i++) {
             if (
                 cobra[i].style.top == cobra[0].style.top &&
                 cobra[i].style.left == cobra[0].style.left &&
                 cobra[i].style.backgroundColor == "blue"
+                
             ) {
                 decrement();
+                await timer()
                 cobra[i].style.backgroundColor = "red";
+                
             } else if (
                 cobra[i].style.top == cobra[0].style.top &&
                 cobra[i].style.left == cobra[0].style.left &&
-                cobra[i].style.backgroundColor != "red"
+                cobra[i].style.backgroundColor != "red" && 
+                cobra[i].style.backgroundColor != "blue" 
             ) {
                 decrement();
                 cobra[i].style.backgroundColor = "blue";
@@ -174,7 +182,11 @@
             align-items: center;
             margin-top: 4em;
         }
-
+        .imagenPonto{
+            position:relative;
+            width: 100%;
+            height: 100%;
+        }
         button {
             margin: 0 auto;
             margin-top: 5vh;
@@ -242,7 +254,7 @@
         #ponto {
             position: absolute;
             display: block;
-            background-color: red;
+            background-color: transparent;
             border-radius: 50%;
             width: 20px;
             height: 20px;
@@ -270,7 +282,7 @@
     <main>
         <div id="cenario">
             <span class="cobra" id="cobra0" />
-            <span id="ponto" />
+            <span id="ponto" ><img class="imagenPonto" src="../public/maca.png" alt=""/></span>
         </div>
 
         <div id="placar">
